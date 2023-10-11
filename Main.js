@@ -15,7 +15,7 @@ function image_filename(){
     //const animename = document.querySelector("#pt > div > a:nth-child(9)").textContent.replace(/【.*$/, "");
     let currentTime = new Date().getTime();
     return `${currentTime}.png`
-};
+}
 
 function image_data(){
     const video = document.querySelector('video');
@@ -25,7 +25,7 @@ function image_data(){
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     return canvas.toDataURL();
-};
+}
 
 function download_image() {
     const link = document.createElement('a');
@@ -34,16 +34,16 @@ function download_image() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
+}
 
 if (!window.download_image){
     window.download_image = download_image;
-};
+}
 
 (function() {
     if (document.location.href.includes("://myself-bbs.com/")){
         return;
-    };
+    }
     // 在指定元素後插入HTML
     var targetElement = document.querySelector("#my-video > div.vjs-control-bar > div.vjs-playback-rate.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button");
     targetElement.insertAdjacentHTML('beforebegin', add_button);
